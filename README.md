@@ -19,7 +19,7 @@ python googlePlay.py PACKAGE_NAME REVIEW_COUNT WEBHOOK_URL
 
 PACKAGE_NAME: app package name, you can find it from url.
 
-https://play.google.com/store/apps/details?id=**com.nianticlabs.pokemongo**&hl=zh_TW&gl=US
+[https://play.google.com/store/apps/details?id=**com.nianticlabs.pokemongo**&hl=zh_TW&gl=US](https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl=zh_TW&gl=US)
 
 
 
@@ -38,7 +38,7 @@ Console Log
 <br>
 <br>
 
-Teams
+
 
 <img src="https://firebasestorage.googleapis.com/v0/b/miyin-393e0.appspot.com/o/%E6%88%AA%E5%9C%96%202021-10-14%20%E4%B8%8B%E5%8D%885.41.24.png?alt=media&token=88945819-8d1e-483e-b51f-294294d0a026" style="zoom:80%;" />
 
