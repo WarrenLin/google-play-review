@@ -46,7 +46,8 @@ result, continuation_token = reviews(
 
 result, _ = reviews(
     PACKAGE_NAME,
-    continuation_token=continuation_token,  # defaults to None(load from the beginning)
+    # defaults to None(load from the beginning)
+    continuation_token=continuation_token,
 )
 
 print("Scrapy reviews done.")
@@ -84,5 +85,5 @@ for item in result:
     reviewsItem.append(adapter)
 
 payload = json.dumps(adapterRateItem.generateRate(appTitle, reviewsItem))
-# postPayload(payload)
+postPayload(payload)
 print("Post to Teams done.")
