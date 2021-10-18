@@ -28,7 +28,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 appInfoResult = app(
     PACKAGE_NAME,
     lang="zh_TW",  # defaults to 'en'
-    country="us",  # defaults to 'us'
+    country="tw",  # defaults to 'us'
 )
 appTitle = appInfoResult["title"]
 
@@ -38,17 +38,17 @@ print("Scrapy reviews...")
 result, continuation_token = reviews(
     PACKAGE_NAME,
     lang="zh_TW",  # defaults to 'en'
+    country="tw",
     sort=Sort.NEWEST,  # defaults to Sort.MOST_RELEVANT
     count=REVIEW_COUNT,  # defaults to 100
     filter_score_with=None,  # defaults to None(means all score)
 )
 
-
-result, _ = reviews(
-    PACKAGE_NAME,
-    # defaults to None(load from the beginning)
-    continuation_token=continuation_token,
-)
+# result, _ = reviews(
+#     PACKAGE_NAME,
+#     # defaults to None(load from the beginning)
+#     continuation_token=continuation_token,
+# )
 
 print("Scrapy reviews done.")
 
@@ -80,7 +80,7 @@ for item in result:
     at = item.get("at")
     atStr = datetime.strftime(at, "%Y-%m-%d %H:%M:%S")
     review = Review(userName, userImage, content, score, appVersion, atStr)
-    # print(review)
+    print(review)
     adapter = adapterRateItem.generateRateAdapter(review)
     reviewsItem.append(adapter)
 
