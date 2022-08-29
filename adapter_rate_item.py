@@ -2,7 +2,7 @@ from review import Review
 
 
 class AdapterRateItem:
-    def generateRate(self, appTitle, reviews: list) -> dict:
+    def generateRate(self, reviews: list) -> dict:
         content = {
             "type": "message",
             "attachments": [
@@ -19,12 +19,12 @@ class AdapterRateItem:
         }
 
         body = [
-            {
-                "type": "TextBlock",
-                "size": "Large",
-                "weight": "Bolder",
-                "text": appTitle,
-            }
+            # {
+            #     "type": "TextBlock",
+            #     "size": "Large",
+            #     "weight": "Bolder",
+            #     "text": appTitle,
+            # }
         ]
 
         for review in reviews:

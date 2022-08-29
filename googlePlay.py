@@ -30,9 +30,10 @@ appInfoResult = app(
     lang="zh_TW",  # defaults to 'en'
     country="tw",  # defaults to 'us'
 )
-appTitle = appInfoResult["title"]
 
-print("App:" + appTitle)
+# broken can't fetch title
+# appTitle = appInfoResult["title"]
+# print("App:" + appTitle)
 print("Scrapy reviews...")
 
 result, continuation_token = reviews(
@@ -84,6 +85,6 @@ for item in result:
     adapter = adapterRateItem.generateRateAdapter(review)
     reviewsItem.append(adapter)
 
-payload = json.dumps(adapterRateItem.generateRate(appTitle, reviewsItem))
+payload = json.dumps(adapterRateItem.generateRate(reviewsItem))
 postPayload(payload)
 print("Post to Teams done.")
